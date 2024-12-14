@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function nextPage() {
+      document.querySelector('.page').classList.add('flipped');
+      setTimeout(() => {
+        window.location.href = "page3.html"; // Navigate to page 3 after the animation
+      }, 1000); // Delay for animation
+    }
+  </script>
+</head>
+<body>
+  <div class="book-container">
+    <!-- Inner Page 2 -->
+    <div class="page inner-page">
+      <div class="line-container">
+        <div class="typing-line" style="animation-delay: 0s;">Hmm....</div>
+        <div class="typing-line" style="animation-delay: 3s;">madam, nuvvu naaku chala special!!</div>
+        <div class="typing-line" style="animation-delay: 6s;">and ee vishyam neeku ippatiki chaala sarlu cheppa le..😅</div>
+        <div class="typing-line" style="animation-delay: 9s;">Naa ee chinna lokam lo ,nee ee friendship naaku jarigina pedda adbutham...</div>
+        <div class="typing-line" style="animation-delay: 12s;">Nuvvu oka god gifted child..!</div>
+        <div class="typing-line" style="animation-delay: 15s;">oka manishini artham cheskoni , valatoh ela undali,vala kosam ela adjust avvali anedhi neelo oka manchi quality </div>
+        <div class="typing-line" style="animation-delay: 18s;">vere valla feelings , arthem cheskuntav , evaru nee feelings artham cheskokapoyna neeku nu badha padathav thappa , eppudu bytaki cheppavu</div>
+        <div class="typing-line" style="animation-delay: 21s;">enni problems unna , entha worst condition lo unna , help cheyya mante chestav..</div>
+        <div class="typing-line" style="animation-delay: 24s;"> introverts ni kuda open up ayye la untadi nee friendship,  iga em chepta nee guruninchi...HATSOFF!!🫡</div>
+        <div class="typing-line" style="animation-delay: 27s;">alantidhi , intha manchi manishiki nen em ivva lekapothunna , em support cheyya leopthunna , thanani artham chesko lekapothunna ani konni sarlu badha untadi</div>
+        <div class="typing-line" style="animation-delay: 30s;">nu oka cute teedybear la untav...🤭🤭</div>
+        <div class="typing-line" style="animation-delay: 33s;">So naa cute teedybear ki em gift idham ani alochistu unde..mmm</div>
+        <div class="typing-line" style="animation-delay: 36s;">Chalo next page ki vellu...</div>
+
+  
+      </div>
+      <button class="btn" onclick="nextPage()">Next</button>
+    </div>
+    
+</body>
+</html>

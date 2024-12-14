@@ -1,0 +1,486 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #000; /* Dark outer background */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.book-container {
+  width: 80%; /* Adjusted width */
+  height: 80%; /* Adjusted height */
+  position: relative;
+  perspective: 1200px; /* Perspective for 3D effect */
+}
+
+/* Page Styles */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Cover Page */
+.cover-page {
+  background: linear-gradient(to bottom, #5c3d2e, #4a3126); /* Dark brown cover */
+  color: #fdfcf4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.cover-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.cover-content p {
+  margin: 10px 0;
+}
+
+/* Inner Pages */
+.inner-page {
+  background: linear-gradient(to bottom, #fdfcf4, #e8e4d8); /* Light page color */
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align text to the top */
+  align-items: center;
+  padding: 20px; /* Add padding inside the page */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent text overflow */
+}
+
+/* Typing effect for each line */
+.line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Ensure space between the top and text */
+  flex-grow: 1;
+}
+
+.typing-line {
+  display: inline-block;
+  font-size: 1.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typingEffect 3s steps(40, end) forwards;
+  margin: 10px 0;
+}
+
+/* Keyframe for typing effect */
+@keyframes typingEffect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Button Styling */
+.btn {
+  text-decoration: none;
+  color: white;
+  background: #ff7043;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn:hover {
+  background: #d65f33;
+}
+
+/* Page Turning Shadow Effects */
+.page:not(.cover-page):not(.back-cover) {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1), inset 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for page flipping */
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+
+
+
+
+
+
+/* General Page Setup */
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #000, #222); /* Dark outer gradient */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%; /* Matches container width */
+  height: 100%; /* Matches container height */
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ffffff, #f7f5f0); /* Inner page color */
+  overflow: hidden;
+}
+
+/* Banner Styling */
+.page4 .banner-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: bannerFloat 1.5s ease-out;
+}
+
+.page4 .banner {
+  background: linear-gradient(to right, #ff7043, #ffab91);
+  padding: 15px 30px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page4 .banner h1 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Animation for Banner */
+@keyframes bannerFloat {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Photo Formation */
+.page4 .photo-formation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.page4 .photo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: floatUp 1.5s ease-out;
+  animation-delay: 0.5s;
+}
+
+/* Photo Styling */
+.page4 .photo {
+  width: 120px;
+  height: 120px;
+  transform: translateY(50px) rotate(var(--offset, 0deg));
+  opacity: 0;
+  animation: photoAppear 2s ease-out forwards;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.page4 .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Centered Text Area */
+.page4 .text-area {
+  text-align: center;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.page4 .text-area p {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom:40px;
+}
+
+/* Centered Navigation Button */
+.page4 .navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  position: absolute; /* Position the button in the center of the page */
+  bottom: 20px; /* Adjust distance from the bottom */
+  width: 100%; /* Full width to center it */
+}
+
+.page4 .next-button {
+  background: linear-gradient(to right, #ff7043, #ffab91);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+  transform: translateY(10px); /* Move the button down slightly */
+}
+
+.page4 .next-button:hover {
+  background: linear-gradient(to right, #ff5722, #ff8a65);
+  transform: translateY(5px); /* Move the button up slightly when hovered */
+}
+
+.page4 .next-button:active {
+  transform: translateY(2px); /* Minor movement when clicked */
+}
+
+/* Animation for Photo Appear */
+@keyframes photoAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotate(var(--offset, 0deg));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--offset, 0deg));
+  }
+}
+
+
+/* Page turning animation */
+@keyframes pageTurn {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+.page4 .page {
+  perspective: 1000px; /* Gives depth for 3D effect */
+}
+
+.page4 .page .next-button {
+  cursor: pointer;
+}
+
+.page4 .page.flipped {
+  animation: pageTurn 1s forwards; /* Apply page-turning effect */
+}
+
+/* Optionally, style the button */
+.page4 .next-button {
+  background: linear-gradient(to right, #ff7043, #ffab91);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+  transform: translateY(10px); /* Adjust position */
+}
+
+.page4 .next-button:hover {
+  background: linear-gradient(to right, #ff5722, #ff8a65);
+  transform: translateY(5px); /* Hover effect */
+}
+
+
+
+    /* Centered message styling */
+    .center-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8); /* Slight background for readability */
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+
+/* Specific styles for Page 5 */
+.page5 .page {
+  width: 80%; /* Adjust to match other pages */
+  height: 80%; /* Adjust to match other pages */
+  background: #ffffff; /* Inner page color */
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: right center;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.page5 .sentence-container {
+  margin-top: 20px;
+}
+
+.page5 .sentence {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 2s ease-in-out forwards;
+  text-align: center;
+}
+
+.page5 .sentence:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.page5 .sentence:nth-child(2) {
+  animation-delay: 2.5s;
+}
+
+.page5 .author-container {
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.page5 .author-text {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.page5 .author-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff7043;
+  position: relative;
+  display: inline-block;
+  animation: hitWithArrow 3s ease-in-out 1;
+}
+
+.page5 .arrow {
+  width: 30px;
+  height: 10px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateX(0) rotate(-45deg);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  animation: arrowFly 3s ease-in-out forwards;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowFly {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+@keyframes hitWithArrow {
+  0% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    color: #b22222; /* Red tint when hit */
+  }
+}
+
+
+/* General Page Flipping Style */
+.page4, .page5 {
+  transform-origin: left center; /* Set origin to the left for forward flipping */
+  transition: transform 1s ease-in-out;
+}
+
+/* Forward Flip Effect for Page 4 */
+.page4.flipped {
+  transform: rotateY(-180deg); /* Flip Page 4 forward */
+}
+
+/* Ensure Page 5 is visible when flipping */
+.page5.flipped {
+  transform: rotateY(0deg); /* Default position for Page 5 */
+}
+
+
+
+

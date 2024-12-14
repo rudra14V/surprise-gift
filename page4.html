@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="book-container">
+    <!-- Page 4 -->
+    <div class="page page4">
+      <!-- Content for Page 4 -->
+      <div class="banner-container">
+        <div class="banner">
+          <h1>Happy Birthday!</h1>
+        </div>
+      </div>
+      <div class="photo-formation">
+        <div class="photo-column left">
+          <div class="photo" style="--offset: -10deg;"><img src="photos/photo1.jpg" alt="Photo 1"></div>
+          <div class="photo" style="--offset: 15deg;"><img src="photos/photo2.jpg" alt="Photo 2"></div>
+          <div class="photo" style="--offset: -5deg;"><img src="photos/photo3.jpg" alt="Photo 3"></div>
+        </div>
+        <div class="photo-column right">
+          <div class="photo" style="--offset: 10deg;"><img src="photos/photo4.jpg" alt="Photo 4"></div>
+          <div class="photo" style="--offset: -20deg;"><img src="photos/photo5.jpg" alt="Photo 5"></div>
+          <div class="photo" style="--offset: 5deg;"><img src="photos/photo6.jpg" alt="Photo 6"></div>
+        </div>
+      </div>
+      
+    <!-- Centered message -->
+    <div class="center-message">
+      <div class="typing-line" style="animation-delay: 0s;">ila ne nuvvu eppudu happy ga undali..enjoy chestu undali</div>
+      <div class="typing-line" style="animation-delay: 3.5s;">And once again...</div>
+      <div class="typing-line" style="animation-delay: 6s;">happy birthday.....!! </div>
+    </div>
+      <!-- Next Button -->
+      <div class="navigation">
+        <button class="next-button" onclick="turnPage()">Next</button>
+
+      </div>
+      <script>
+        function turnPage() {
+          const page = document.querySelector('.page');
+          page.classList.add('flipped'); // Trigger page-turn animation
+          
+          // Navigate to the next page after the animation ends
+          setTimeout(() => {
+            window.location.href = 'page5.html';
+          }, 1000); // 1s matches the duration of the animation
+        }
+      </script>
+      
+    </div>
+  </div>
+</body>
+</html>

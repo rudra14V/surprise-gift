@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function nextPage() {
+      document.querySelector('.page').classList.add('flipped');
+      setTimeout(() => {
+        window.location.href = "page2.html"; // Navigate to page 2 after the animation
+      }, 1000); // Delay for animation
+    }
+  </script>
+</head>
+<body>
+  <div class="book-container">
+    <!-- Cover Page -->
+    <div class="page cover-page">
+      <div class="cover-content">
+        <h1>Welcome</h1>
+        <p>Click to open the book and start reading.</p>
+        <button class="btn" onclick="nextPage()">Start</button>
+      </div>
+    </div>
+
+    <!-- Inner Page 1 -->
+    <div class="page inner-page">
+      <div class="line-container">
+        <p class="typing-line" style="animation-delay: 0s;">Hi baathu...😊</p>
+        <p class="typing-line" style="animation-delay: 3.5s;">Happy Birthday...!! 🎂 🎉🥳🥳🥳</p>
+        <p class="typing-line" style="animation-delay: 7.5s;">nee birthday ki em gift iddham ani alochistu unde ....</p>
+        <p class="typing-line" style="animation-delay: 11s;">Neeku emyna konu ivvachu...
+          But edo naaku vachinattu try chesa... 😁</p>
+        <p class="typing-line" style="animation-delay: 15s;">sare chuudu em chesano nee kosam....</p>
+      </div>
+      <button class="btn" onclick="nextPage()">Next</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 5</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #000, #222); /* Dark outer gradient */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .page5 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 90%; /* Matches container width */
+      height: 100%; /* Matches container height */
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #ffffff, #f7f5f0); /* Inner page color */
+      overflow: hidden;
+    }
+
+    /* Add animations for content */
+    @keyframes floatUp {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .page5 .text-area {
+      text-align: center;
+      width: 80%;
+      margin-top: 20px;
+    }
+
+    .page5 .text-area p {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 40px; /* Space for the "A book by V" text */
+    }
+
+    /* Fire-throwing animation for signature */
+    .signature {
+      font-size: 1.5rem;
+      color: #ff4500;
+      font-weight: bold;
+      margin-top: auto;
+      text-align: center;
+      opacity: 0; /* Starts hidden */
+      transform: scale(0.8) translateY(50px);
+      animation: fireThrow 2s ease-out forwards;
+      animation-delay: 36s; /* Ensures it appears after all sentences */
+    }
+
+    @keyframes fireThrow {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+        text-shadow: 0 0 5px rgba(255, 69, 0, 0.5), 0 0 10px rgba(255, 69, 0, 0.5);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.2) translateY(-20px);
+        text-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 165, 0, 0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        text-shadow: 0 0 10px rgba(255, 69, 0, 1), 0 0 30px rgba(255, 140, 0, 1);
+      }
+    }
+
+    .page5 .next-button {
+      text-decoration: none;
+      color: white;
+      background: #4caf50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 20px; /* Adjusted spacing */
+    }
+
+    .page5 .next-button:hover {
+      background: #388e3c;
+      transform: scale(1.1);
+    }
+ 
+  </style>
+</head>
+<body>
+  <div class="book-container">
+    <!-- Page 5 -->
+    <div class="page page5">
+      <div class="typing-line" style="animation-delay: 0ms;">Ha final ga  nee oka vishyam cheppali...</div>
+      <div class="typing-line" style="animation-delay: 3s;">may be,neeku unna friends lo nen best kakapovachu</div>
+      <div class="typing-line" style="animation-delay: 6s;">nee expectations and hopes reach avvaleka povachu..</div>
+      <div class="typing-line" style="animation-delay: 9s;">teliso , teleko hurt chesi undachu...</div>
+      <div class="typing-line" style="animation-delay: 12s;">and gurthu pettukune antha important manishini kakapovachu..</div>
+      <div class="typing-line" style="animation-delay: 15s;">kani</div>
+      <div class="typing-line" style="animation-delay: 18s;">neeku emyna , em problem vachina , em share cheskovalani unna..</div>
+      <div class="typing-line" style="animation-delay: 21s;">eh time lo ayna call chey...cheppu naaku </div>
+      <div class="typing-line" style="animation-delay: 24s;">may be nee good time lo nee neetoh celebrate cheskune antha goppa vadni kakpoyna nee bad time lo neetoh undi neeku help chesta..</div>
+      <div class="typing-line" style="animation-delay: 27s;">nen chesina anni teetha panulaki sorryand emmana anipiste call chesi tittu light..okay na!?</div>
+      <div class="typing-line" style="animation-delay: 30s;">so ha eroju nee birthday..!! so mancihga enjoy chey and remember..  </div>
+      <div class="typing-line" style="animation-delay: 33s;">always be happy and have a smile on your face...  </div>
+      <!-- Signature with flame effect -->
+      <div class="signature">
+         By V
+    
+  </div>
+</body>
+</html>
